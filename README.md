@@ -1,42 +1,42 @@
 
 # Rapport
+den första som skulle göras var att deklarera alla variabler i mainactivity. på activity main xml så lade jag till en editview och en knapp.
 
-**Skriv din rapport här!**
+    button = findViewById(R.id.prefButton);
+på knappen så satte jag också en onclick listener med intent för att komma till en annan activitet.
 
-_Du kan ta bort all text som finns sedan tidigare_.
-
-## Följande grundsyn gäller dugga-svar:
-
-- Ett kortfattat svar är att föredra. Svar som är längre än en sida text (skärmdumpar och programkod exkluderat) är onödigt långt.
-- Svaret skall ha minst en snutt programkod.
-- Svaret skall inkludera en kort övergripande förklarande text som redogör för vad respektive snutt programkod gör eller som svarar på annan teorifråga.
-- Svaret skall ha minst en skärmdump. Skärmdumpar skall illustrera exekvering av relevant programkod. Eventuell text i skärmdumpar måste vara läsbar.
-- I de fall detta efterfrågas, dela upp delar av ditt svar i för- och nackdelar. Dina för- respektive nackdelar skall vara i form av punktlistor med kortare stycken (3-4 meningar).
-
-Programkod ska se ut som exemplet nedan. Koden måste vara korrekt indenterad då den blir lättare att läsa vilket gör det lättare att hitta syntaktiska fel.
-
-```
-function errorCallback(error) {
-    switch(error.code) {
-        case error.PERMISSION_DENIED:
-            // Geolocation API stöds inte, gör något
-            break;
-        case error.POSITION_UNAVAILABLE:
-            // Misslyckat positionsanrop, gör något
-            break;
-        case error.UNKNOWN_ERROR:
-            // Okänt fel, gör något
-            break;
+    button.setOnClickListener(new View.OnClickListener(){
+    @Override
+    public void onClick(View view) {
+    Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+    startActivity(intent);
     }
-}
-```
+    });
+på min andra activity main xml så hade jag skapat en textview och en button.
 
-Bilder läggs i samma mapp som markdown-filen.
+    button = findViewById(R.id.prefButton);
+    text = findViewById(R.id.settingseditview);
+
+ på min mainactivity 2 så kallar jag på editview från activity main.
+
+      button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                myPreferenceEditor = myPreferenceRef.edit();
+                myPreferenceEditor.putString("savepref", text.getText().toString());
+                myPreferenceEditor.apply();
+sen satte jag en onclick listener på knappen och när knappen trycks så sparas en sträng i de delade prefrenserna med nyckeln savepref och mainactivity startas och användaren dirigeras till den nya aktiviteten.
+
+    @Override
+    protected void onResume() {
+    Log.d("onresumemain2", "onResume()");
+    super.onResume();
+    String savedText = myPreferenceRef.getString("savepref", "not found");
+    textView.setText(savedText);
+    }
+
+koden är från main activity och den tar emot den texten som blev inmatad och skriver ut det 
+
 
 ![](android.png)
 
-Läs gärna:
-
-- Boulos, M.N.K., Warren, J., Gong, J. & Yue, P. (2010) Web GIS in practice VIII: HTML5 and the canvas element for interactive online mapping. International journal of health geographics 9, 14. Shin, Y. &
-- Wunsche, B.C. (2013) A smartphone-based golf simulation exercise game for supporting arthritis patients. 2013 28th International Conference of Image and Vision Computing New Zealand (IVCNZ), IEEE, pp. 459–464.
-- Wohlin, C., Runeson, P., Höst, M., Ohlsson, M.C., Regnell, B., Wesslén, A. (2012) Experimentation in Software Engineering, Berlin, Heidelberg: Springer Berlin Heidelberg.

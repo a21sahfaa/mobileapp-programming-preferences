@@ -32,7 +32,6 @@ task archive(type: Zip) {
     delete fileTree(projectDir) {
         include '*.zip'
     }
-
     def projectDirFile = new File(projectDir)
     from projectDirFile
     destinationDirectory = projectDirFile

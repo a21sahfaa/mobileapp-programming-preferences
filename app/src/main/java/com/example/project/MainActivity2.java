@@ -20,7 +20,7 @@ public class MainActivity2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        //setSupportActionBar(toolbar);
         button = findViewById(R.id.prefButton);
         text = findViewById(R.id.settingseditview);
         myPreferenceRef = getSharedPreferences("ref", MODE_PRIVATE);
