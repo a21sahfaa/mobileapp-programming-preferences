@@ -38,5 +38,9 @@ sen satte jag en onclick listener på knappen och när knappen trycks så sparas
 koden är från main activity och den tar emot den texten som blev inmatad och skriver ut det 
 
 
-![](android.png)
+![](bild1.png)
+
+![](bild2.png)
+
+![](bild3.png)
 
