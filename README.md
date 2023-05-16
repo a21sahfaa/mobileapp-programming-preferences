@@ -37,6 +37,10 @@ sen satte jag en onclick listener på knappen och när knappen trycks så sparas
 
 koden är från main activity och den tar emot den texten som blev inmatad och skriver ut det 
 
+när jag var klar med uppgiften så funkade det och när jag körde appen igen dagen efter så fick jag en error medelande om action bar så när jag tog bort den så funkade appen igen
+//setSupportActionBar(toolbar);
+
+
 
 ![](bild1.png)
 
